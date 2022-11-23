@@ -10,3 +10,6 @@ permissions:
   core.color.sign:
     default: op
     description: This permission gives a player the ability to create colored signs.
+  core.color.chat:
+    default: op
+    description: This permission gives a player the ability to chat with styled messages.
