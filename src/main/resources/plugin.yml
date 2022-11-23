@@ -1,0 +1,7 @@
+name: Core
+version: '${project.version}'
+main: com.robpizza.core.Core
+api-version: 1.19
+authors: [ Robpizza ]
+description: Core is a replacement plugin for Essentials
+website: https://www.spigotmc.org/members/rob-pizza.34733
