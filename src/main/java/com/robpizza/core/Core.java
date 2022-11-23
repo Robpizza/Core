@@ -9,7 +9,6 @@ public final class Core extends JavaPlugin {
     public void onEnable() {
         // Setup the configurations datafolder
         ConfigHandler.initializeConfigHandler(this);
-
     }
 
     @Override
