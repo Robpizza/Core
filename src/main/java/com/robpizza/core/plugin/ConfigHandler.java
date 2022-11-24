@@ -20,13 +20,14 @@ public class ConfigHandler {
 
     /**
      * Initializes the configuration handler
+     *
      * @param coreInstance plugin instance
      */
     public static void initializeConfigHandler(final Core coreInstance) {
         pluginInstance = coreInstance;
         configFile = new File(coreInstance.getDataFolder(), "config.yml");
 
-        if(!configFile.exists()) {
+        if (!configFile.exists()) {
             coreInstance.saveDefaultConfig();
         }
 
@@ -48,6 +49,7 @@ public class ConfigHandler {
 
     /**
      * Returns the 'config.yml' configuration
+     *
      * @return FileConfiguration type of 'config.yml'
      */
     public static FileConfiguration getBaseConfig() {
