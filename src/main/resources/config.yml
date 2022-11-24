@@ -1,0 +1,4 @@
+# The world which should be protected against grieving
+# NOTE: This is not a radius protection, this is a full-world protection.
+# Can be disabled by leaving it empty
+protected-world: ""
