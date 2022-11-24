@@ -1,4 +1,10 @@
 # The world which should be protected against grieving
+# Can be empty to disable this feature
 # NOTE: This is not a radius protection, this is a full-world protection.
-# Can be disabled by leaving it empty
 protected-world: ""
+
+# Worlds which a player should instantly respawn
+# Can be empty to disable this feature
+# NOTE: Respawn screen wil still show if using anything other than Spigot (Not working with Paper for example)
+instant-respawn:
+  - "world"
