@@ -37,6 +37,6 @@ public final class Core extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+//        Bukkit.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
     }
 }
