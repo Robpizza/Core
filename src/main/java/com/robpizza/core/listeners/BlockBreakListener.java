@@ -18,7 +18,7 @@ public class BlockBreakListener implements Listener {
             if (!player.hasPermission("core.bypass.protection.break") || !player.isOp()) {
 
                 // Check if the World is loaded to prevent "IllegalArgumentException"
-                if(player.getLocation().isWorldLoaded()) {
+                if (player.getLocation().isWorldLoaded()) {
                     boolean cancel = player.getLocation().getWorld().getName().equalsIgnoreCase(getBaseConfig().getString("protected-world"));
                     event.setCancelled(cancel);
                 }
