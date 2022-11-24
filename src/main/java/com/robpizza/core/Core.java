@@ -2,6 +2,7 @@ package com.robpizza.core;
 
 import com.robpizza.core.listeners.AsyncPlayerChatListener;
 import com.robpizza.core.listeners.BlockBreakListener;
+import com.robpizza.core.listeners.BlockPlaceListener;
 import com.robpizza.core.listeners.SignChangeListener;
 import com.robpizza.core.plugin.ConfigHandler;
 import org.bukkit.Bukkit;
@@ -38,5 +39,6 @@ public final class Core extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
     }
 }
