@@ -8,3 +8,5 @@ protected-world: ""
 # NOTE: Respawn screen wil still show if using anything other than Spigot (Not working with Paper for example)
 instant-respawn:
   - "world"
+
+serverMOTD: "Core is running on this server!"
