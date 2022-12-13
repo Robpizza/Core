@@ -10,3 +10,6 @@ instant-respawn:
   - "world"
 
 serverMOTD: "Core is running on this server!"
+announcements:
+  join: ""
+  leave: true
