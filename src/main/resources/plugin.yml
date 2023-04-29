@@ -6,10 +6,28 @@ authors: [ Robpizza ]
 description: Core is a replacement plugin for Essentials
 website: https://www.spigotmc.org/members/rob-pizza.34733
 
+commands:
+  vanish:
+    usage: /<command> [player]
+    description: With this command you can enable/disable vanish.
+    aliases: [v]
 permissions:
-  core.color.sign:
-    default: op
-    description: This permission gives a player the ability to create colored signs.
   core.color.chat:
     default: op
     description: This permission gives a player the ability to chat with styled messages.
+  core.bypass.protection.break:
+    default: op
+    description: This permission gives a player the ability to break blocks in a protected world.
+  core.bypass.protection.place:
+    default: op
+    description: This permission gives a player the ability to place blocks in a protected world.
+  core.color.sign:
+    default: op
+    description: This permission gives a player the ability to create colored signs.
+
+  core.vanish:
+    default: op
+    description: TODO
+  core.vanish.other:
+    default: op
+    description: TODO

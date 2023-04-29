@@ -14,21 +14,24 @@ import java.util.logging.Level;
  * Used to manage all the different configuration files used by Core
  */
 public class ConfigHandler {
-    private static Core pluginInstance;
-    private static FileConfiguration configuration;
-    private static File configFile;
+    private static FileConfiguration configuration, language;
+    private static File configFile, languageFile;
 
     /**
      * Initializes the configuration handler
      *
-     * @param coreInstance plugin instance
      */
-    public static void initializeConfigHandler(final Core coreInstance) {
-        pluginInstance = coreInstance;
-        configFile = new File(coreInstance.getDataFolder(), "config.yml");
+    public static void initializeConfigHandler() {
+        configFile = new File(Core.getInstance().getDataFolder(), "config.yml");
+        languageFile = new File(Core.getInstance().getDataFolder(), "language.yml");
 
         if (!configFile.exists()) {
-            coreInstance.saveDefaultConfig();
+            Core.getInstance().saveDefaultConfig();
+        }
+
+        if(!languageFile.exists()) {
+            languageFile.getParentFile().mkdirs();
+            Core.getInstance().saveResource("language.yml", false);
         }
 
         reloadConfigs();
@@ -40,10 +43,12 @@ public class ConfigHandler {
      */
     private static void reloadConfigs() {
         configuration = new YamlConfiguration();
+        language = new YamlConfiguration();
         try {
             configuration.load(configFile);
+            language.load(languageFile);
         } catch (IOException | InvalidConfigurationException exception) {
-            pluginInstance.getLogger().log(Level.SEVERE, "Could not load config file!", exception);
+            Core.getInstance().getLogger().log(Level.SEVERE, "Could not load config file!", exception);
         }
     }
 
@@ -58,6 +63,12 @@ public class ConfigHandler {
 
         // Return configuration
         return configuration;
+    }
+
+    public static String __(String name) {
+        reloadConfigs();
+
+        return language.getString(name);
     }
 
 }

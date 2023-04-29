@@ -13,9 +13,14 @@ public class PlayerDeathListener implements Listener {
         // Check if there even is a world configured
         if (getBaseConfig().getStringList("instant-respawn").size() > 0) {
             Player player = event.getEntity();
-            // Check if the world is loaded
-            if (player.getLocation().isWorldLoaded() && getBaseConfig().getStringList("instant-respawn").contains(player.getLocation().getWorld().getName())) {
-                player.spigot().respawn();
+
+            // Check if the World is loaded to prevent "IllegalArgumentException"
+            if (player.getLocation().isWorldLoaded() && player.getLocation().getWorld() != null) {
+
+                // Check if instant respawn is enabled
+                if(getBaseConfig().getStringList("instant-respawn").contains(player.getLocation().getWorld().getName())) {
+                    player.spigot().respawn();
+                }
             }
         }
     }

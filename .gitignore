@@ -138,3 +138,10 @@ crashlytics-build.properties
 fabric.properties
 .idea/httpRequests
 .idea/caches/build_file_checksums.ser
+.project
+.classpath
+replay_pid*
+.idea/**/aws.xml
+.idea/sonarlint/
+
+src/main/java/com/robpizza/core/commands/BaseCommand.java

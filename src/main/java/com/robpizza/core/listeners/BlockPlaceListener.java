@@ -18,7 +18,7 @@ public class BlockPlaceListener implements Listener {
             if (!player.hasPermission("core.bypass.protection.place") || !player.isOp()) {
 
                 // Check if the World is loaded to prevent "IllegalArgumentException"
-                if (player.getLocation().isWorldLoaded()) {
+                if (player.getLocation().isWorldLoaded() && player.getLocation().getWorld() != null) {
                     boolean cancel = player.getLocation().getWorld().getName().equalsIgnoreCase(getBaseConfig().getString("protected-world"));
                     event.setCancelled(cancel);
                 }

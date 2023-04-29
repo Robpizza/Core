@@ -3,13 +3,18 @@
 # NOTE: This is not a radius protection, this is a full-world protection.
 protected-world: ""
 
+# Teleport players back to spawn when below the 'void-threshold' in the above configured protected-world
+void-teleport: true
+void-threshold: 10
+
 # Worlds which a player should instantly respawn
 # Can be empty to disable this feature
 # NOTE: Respawn screen wil still show if using anything other than Spigot (Not working with Paper for example)
 instant-respawn:
   - "world"
 
-serverMOTD: "Core is running on this server!"
-announcements:
-  join: ""
-  leave: true
+# Server MOTDS shows up in the players server list
+server-MOTD: "&6&lCore &eis running on this server!"
+
+# Show the command name/'Core' in front of plugin messages
+feedback-prefix: true
