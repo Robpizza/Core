@@ -9,7 +9,7 @@ import static com.robpizza.core.plugin.ConfigHandler.getBaseConfig;
 
 public class EntityDamageListener implements Listener {
     @EventHandler
-    public void onBlockBreakEvent(EntityDamageEvent event) {
+    public void onEntityDamageEvent(EntityDamageEvent event) {
         // Check if the 'protected-world' setting is configured
         if (getBaseConfig().getString("protected-world") != null) {
 
@@ -17,8 +17,11 @@ public class EntityDamageListener implements Listener {
             if (event.getEntity() instanceof Player) {
                 Player player = (Player) event.getEntity();
 
-                // Cancel damage event if the cause was fall
-                event.setCancelled(event.getCause() == EntityDamageEvent.DamageCause.FALL);
+                // Check if the player is in a protected world
+                if(player.getWorld().getName().equalsIgnoreCase(getBaseConfig().getString("protected-world"))) {
+                    // Cancel damage event if the cause was fall
+                    event.setCancelled(event.getCause() == EntityDamageEvent.DamageCause.FALL);
+                }
             }
         }
     }
