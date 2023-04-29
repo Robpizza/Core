@@ -71,4 +71,11 @@ public class ConfigHandler {
         return language.getString(name);
     }
 
+    public static String __(String name, String playerName) {
+        reloadConfigs();
+        String message = language.getString(name);
+        message = message != null ? message.replace("{player}", playerName) : "";
+        return message;
+    }
+
 }

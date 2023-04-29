@@ -14,7 +14,7 @@ public class Vanish extends CoreCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull final CommandSender sender, @NotNull final Command command, @NotNull final String label, @NotNull final String[] args) {
         // Set command prefix
-        setPrefix("Vanish");
+        setPrefix("&6&lVanish");
 
         // Check if the sender is a player
         if (sender instanceof Player) {

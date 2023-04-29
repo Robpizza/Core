@@ -18,3 +18,11 @@ server-MOTD: "&6&lCore &eis running on this server!"
 
 # Show the command name/'Core' in front of plugin messages
 feedback-prefix: true
+
+# Vanish related settings
+# Keep in mind that the player also needs the corresponding permissions
+vanish:
+  allowed-commands:
+    - vanish
+    - kick
+    - ban

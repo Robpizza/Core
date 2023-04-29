@@ -1,16 +1,27 @@
 name: Core
+prefix: Core
 version: '${project.version}'
 main: com.robpizza.core.Core
 api-version: 1.19
-authors: [ Robpizza ]
+author: Robpizza
 description: Core is a replacement plugin for Essentials
 website: https://www.spigotmc.org/members/rob-pizza.34733
+load: STARTUP
 
 commands:
+  broadcast:
+    usage: /<command> <message>
+    description: Broadcast a message server-wide with color support
+  clearchat:
+    usage: /<command> <message>
+    description: Clear the chat for every player online
+    aliases:
+      - cc
   vanish:
     usage: /<command> [player]
-    description: With this command you can enable/disable vanish.
-    aliases: [v]
+    description: Toggle vanish for yourself or another player
+    aliases:
+      - v
 permissions:
   core.color.chat:
     default: op
@@ -29,5 +40,11 @@ permissions:
     default: op
     description: TODO
   core.vanish.other:
+    default: op
+    description: TODO
+  core.broadcast:
+    default: op
+    description: TODO
+  core.clearchat:
     default: op
     description: TODO

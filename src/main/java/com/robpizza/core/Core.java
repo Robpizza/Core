@@ -1,5 +1,7 @@
 package com.robpizza.core;
 
+import com.robpizza.core.commands.Broadcast;
+import com.robpizza.core.commands.ClearChat;
 import com.robpizza.core.commands.Vanish;
 import com.robpizza.core.listeners.*;
 import com.robpizza.core.objects.VanishedPlayerMemory;
@@ -62,6 +64,7 @@ public final class Core extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new CommandPreProcessListener(), this);
 //        Bukkit.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this); // TODO Not working?
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
@@ -71,6 +74,8 @@ public final class Core extends JavaPlugin {
     }
 
     private void registerCommands() {
+        this.getCommand("broadcast").setExecutor(new Broadcast());
+        this.getCommand("clearchat").setExecutor(new ClearChat());
         this.getCommand("vanish").setExecutor(new Vanish());
     }
 }
