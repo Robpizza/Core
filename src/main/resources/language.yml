@@ -1,0 +1,8 @@
+join-message: "&6{player} &ejoined the server!"
+leave-message: "&6{player} &eleft the server!"
+vanish-enabled: "&aYou are now in vanish"
+vanish-disabled: "&cYou are no longer in vanish"
+no-permissions: "&4You cannot use this command"
+vanished-not-allowed-command: "&4&lERROR &r | &cYou can't use this command while you're in vanish!"
+broadcast-not-enough-arguments: "&cUse /broadcast <message>"
+chat-cleared: "&6Chat cleared by &e&l{player}&r"

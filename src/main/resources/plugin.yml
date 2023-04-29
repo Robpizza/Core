@@ -1,7 +1,50 @@
 name: Core
+prefix: Core
 version: '${project.version}'
 main: com.robpizza.core.Core
 api-version: 1.19
-authors: [ Robpizza ]
+author: Robpizza
 description: Core is a replacement plugin for Essentials
 website: https://www.spigotmc.org/members/rob-pizza.34733
+load: STARTUP
+
+commands:
+  broadcast:
+    usage: /<command> <message>
+    description: Broadcast a message server-wide with color support
+  clearchat:
+    usage: /<command> <message>
+    description: Clear the chat for every player online
+    aliases:
+      - cc
+  vanish:
+    usage: /<command> [player]
+    description: Toggle vanish for yourself or another player
+    aliases:
+      - v
+permissions:
+  core.color.chat:
+    default: op
+    description: This permission gives a player the ability to chat with styled messages.
+  core.bypass.protection.break:
+    default: op
+    description: This permission gives a player the ability to break blocks in a protected world.
+  core.bypass.protection.place:
+    default: op
+    description: This permission gives a player the ability to place blocks in a protected world.
+  core.color.sign:
+    default: op
+    description: This permission gives a player the ability to create colored signs.
+
+  core.vanish:
+    default: op
+    description: TODO
+  core.vanish.other:
+    default: op
+    description: TODO
+  core.broadcast:
+    default: op
+    description: TODO
+  core.clearchat:
+    default: op
+    description: TODO
